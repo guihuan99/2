@@ -10,8 +10,12 @@
 # See /LICENSE for more information.
 #
 
-# Modify default IP
-sed -i 's/192.168.1.1/192.168.6.1/g' package/base-files/files/bin/config_generate
+# 移除 feeds 里的旧版，避免冲突
+rm -rf feeds/luci/themes/luci-theme-argon
+
+# 拉取最新官方源码
+git clone https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
+rm -rf package/luci-theme-argon/.git
 
 # Modify default theme
 #sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
