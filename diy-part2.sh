@@ -10,13 +10,6 @@
 # See /LICENSE for more information.
 #
 
-# 移除 feeds 里的旧版，避免冲突
-rm -rf feeds/luci/themes/luci-theme-argon
-
-# 拉取最新官方源码
-git clone https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
-rm -rf package/luci-theme-argon/.git
-
 # Modify default theme
 #sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
 
